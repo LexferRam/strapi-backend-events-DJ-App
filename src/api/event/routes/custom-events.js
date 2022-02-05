@@ -14,10 +14,13 @@ module.exports = {
             // // point to a registered policy with some custom configuration
             // { name: 'policy-name', config: {} }, 
   
-            // // pass a policy implementation directly
-            // (policyContext, config, { strapi }) => {
-            //   return true;
-            // },
+            // pass a policy implementation directly
+            (policyContext, config, { strapi },ctx) => {
+                // const user = ctx.state.user;
+                // console.log(policyContext.state.route.config.auth)
+               console.log(strapi.services.users)
+              return true;
+            },
           ]
         },
       },
